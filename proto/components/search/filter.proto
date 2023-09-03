@@ -1,8 +1,8 @@
 syntax = "proto3";
-package components;
-option go_package = "markwen.space/components";
+package search;
+option go_package = "markwen.space/components/search";
 
-import "google/protobuf/timestamp.proto";
+import "proto/components/range.proto";
 
 message Filter {
   string id = 1;
@@ -33,11 +33,6 @@ message Keywords {
 }
 
 message DateRange {
-  DateRangeOptions available = 1;
-  DateRangeOptions selected = 2;
-}
-
-message DateRangeOptions {
-  google.protobuf.Timestamp from = 1;
-  google.protobuf.Timestamp to = 2;
+  components.DateTimeRange available = 1;
+  components.DateTimeRange selected = 2;
 }

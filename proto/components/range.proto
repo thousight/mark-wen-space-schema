@@ -1,0 +1,10 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+import "google/protobuf/timestamp.proto";
+
+message DateTimeRange {
+  google.protobuf.Timestamp from = 1;
+  google.protobuf.Timestamp to = 2;
+}

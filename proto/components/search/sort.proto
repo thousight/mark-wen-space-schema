@@ -1,0 +1,10 @@
+syntax = "proto3";
+package search;
+option go_package = "markwen.space/components/search";
+
+message Sort {
+  string id = 1;
+  string title = 2;
+  string json_path = 3;
+  bool ascending = 4;
+}

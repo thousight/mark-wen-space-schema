@@ -1,0 +1,15 @@
+syntax = "proto3";
+package search;
+option go_package = "markwen.space/components/search";
+
+message PaginationRequest {
+  string start = 1;
+  int64 limit = 2;
+}
+
+message PaginationResponse {
+  int64 number = 1;
+  int64 total = 2;
+  string next = 3;
+  string previous = 4;
+}

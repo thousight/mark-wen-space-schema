@@ -1,0 +1,13 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components/search";
+
+import "proto/components/search/filter.proto";
+import "proto/components/search/sort.proto";
+import "proto/components/search/pagination.proto";
+
+message Search {
+  repeated search.Filter filters = 1;
+  repeated search.Sort sorts = 2;
+  search.PaginationResponse pagination = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+import "proto/components/image.proto";
+
+message Link {
+  string text = 1;
+  string href = 2;
+  components.Image icon = 3;
+  string rel = 4;
+  string target = 5;
+}
+

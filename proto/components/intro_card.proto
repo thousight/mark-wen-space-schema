@@ -1,0 +1,13 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+import "proto/components/image.proto";
+
+message IntroCard {
+  string name = 1;
+  string title = 2;
+  components.Image image = 3;
+  repeated components.Image icons = 4;
+}
+

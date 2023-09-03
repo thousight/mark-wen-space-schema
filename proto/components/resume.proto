@@ -1,0 +1,40 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+import "proto/components/image.proto";
+
+message ResumeSection {
+  string title = 1;
+  oneof items {
+    Experiences experiences = 2;
+    Skills skills = 3;
+  }
+}
+
+message Skills {
+  repeated SkillCategory categories = 1;
+}
+
+message SkillCategory {
+  string name = 1;
+  repeated Skill skills = 2;
+}
+
+message Skill {
+  string name = 1;
+  int32 percentage = 2;
+}
+
+message Experiences {
+  repeated Experience experiences = 1;
+}
+
+message Experience {
+  string title = 1;
+  string subtitle = 2;
+  string location = 3;
+  string times = 4;
+  components.Image logo = 5;
+  repeated string descriptions = 6;
+}

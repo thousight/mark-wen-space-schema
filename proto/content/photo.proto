@@ -1,0 +1,31 @@
+syntax = "proto3";
+package content;
+option go_package = "markwen.space/content";
+
+import "google/protobuf/timestamp.proto";
+import "proto/components/image.proto";
+import "proto/components/link.proto";
+
+message Photo {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string category = 4;
+  components.Image image = 5;
+  google.protobuf.Timestamp date_taken = 6;
+  repeated string liked_by = 7;
+  repeated string viewed_by = 8;
+  repeated PhotoMetadata metadata = 9;
+  repeated components.Link social_share_link = 10;
+  repeated string keywords = 11;
+  google.protobuf.Timestamp date_created = 12;
+  google.protobuf.Timestamp last_updated = 13;
+  string created_by = 14;
+  string last_edited_by = 15;
+}
+
+message PhotoMetadata {
+  string id = 1;
+  string value = 2;
+  components.Image image = 3; // can be icon or google map image of the latlong
+}

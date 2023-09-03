@@ -1,0 +1,25 @@
+syntax = "proto3";
+package content;
+option go_package = "markwen.space/content";
+
+import "google/protobuf/timestamp.proto";
+import "proto/components/image.proto";
+import "proto/components/range.proto";
+import "proto/components/link.proto";
+
+message Software {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  components.Image image = 4;
+  components.DateTimeRange time_range = 5;
+  repeated components.Image icons = 6;
+  repeated string platforms = 7;
+  repeated string frameworks = 8;
+  repeated components.Link links = 9;
+  google.protobuf.Timestamp date_created = 10;
+  google.protobuf.Timestamp last_updated = 11;
+  string created_by = 12;
+  string last_edited_by = 13;
+}
+
