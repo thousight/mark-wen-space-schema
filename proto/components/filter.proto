@@ -1,0 +1,43 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+import "google/protobuf/timestamp.proto";
+
+message Filter {
+  string id = 1;
+  string title = 2;
+  string json_path = 3;
+
+  oneof types {
+    Selection selection = 4;
+    Keywords keywords = 5;
+    DateRange date_rage = 6;
+  }
+}
+
+message Selection {
+  bool single = 1;
+  repeated SelectionOption options = 2;
+}
+
+message SelectionOption {
+  string id = 1;
+  string title = 2;
+  bool selected = 3;
+}
+
+message Keywords {
+  repeated string keywords = 1;
+  string placeholder = 2;
+}
+
+message DateRange {
+  DateRangeOptions available = 1;
+  DateRangeOptions selected = 2;
+}
+
+message DateRangeOptions {
+  google.protobuf.Timestamp from = 1;
+  google.protobuf.Timestamp to = 2;
+}

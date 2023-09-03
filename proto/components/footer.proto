@@ -1,0 +1,12 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+import "proto/components/image.proto";
+
+message Footer {
+  components.Image logo = 1;
+  string disclaimer = 2;
+  string legal = 3;
+}
+

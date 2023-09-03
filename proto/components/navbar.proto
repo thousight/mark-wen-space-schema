@@ -1,0 +1,18 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+import "proto/components/image.proto";
+
+message Navbar {
+  repeated NavbarTab tabs = 1;
+  components.Image logo = 2;
+  repeated string themes = 3;
+}
+
+message NavbarTab {
+  string id = 1;
+  string display_name = 2;
+  string relative_path = 3;
+  repeated NavbarTab tabs = 4;
+}

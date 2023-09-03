@@ -1,0 +1,9 @@
+syntax = "proto3";
+package components;
+option go_package = "markwen.space/components";
+
+message Image {
+  string src = 1;
+  string link = 2;
+  string alt = 3;
+}
