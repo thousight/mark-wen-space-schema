@@ -1,4 +1,4 @@
-name: Build and publish TypeScript
+name: Build and publish Go
 
 on:
   push:
@@ -29,7 +29,3 @@ jobs:
       - name: Build app
         run: make go
       
-      - name: Semantic release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
