@@ -1,8 +1,7 @@
 {
   "name": "mark-wen-space-schema",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "gRPC schema for Mark Wen Space",
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thousight/mark-wen-space-schema.git"
@@ -16,7 +15,40 @@
     "url": "https://github.com/thousight/mark-wen-space-schema/issues"
   },
   "homepage": "https://github.com/thousight/mark-wen-space-schema#readme",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": true
+      },
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "@testing-library/jest-dom": "^6.1.2",
+    "@testing-library/react": "^14.0.0",
     "ts-protoc-gen": "^0.15.0"
   }
 }
