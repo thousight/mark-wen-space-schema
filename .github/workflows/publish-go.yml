@@ -15,10 +15,10 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Go
+      - name: Setup go
         uses: actions/setup-go@v4
         
-      - name: Setup Protoc
+      - name: Setup protoc
         uses: arduino/setup-protoc@v2
   
       - name: Setup protoc-gen-go
