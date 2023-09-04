@@ -15,13 +15,8 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      
       - name: Build app
-        run: make ts
+        run: make go
       
       - name: Semantic release
         env:
