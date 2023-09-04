@@ -1,6 +1,6 @@
 syntax = "proto3";
 package search;
-option go_package = "markwen.space/schema/components/search";
+option go_package = "github.com/thousight/mark-wen-space-schema/markwen.space/schema/components/search";
 
 import "proto/components/search/filter.proto";
 import "proto/components/search/sort.proto";

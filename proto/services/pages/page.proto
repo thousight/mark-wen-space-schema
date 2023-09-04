@@ -1,6 +1,6 @@
 syntax = "proto3";
 package services;
-option go_package = "markwen.space/schema/services";
+option go_package = "github.com/thousight/mark-wen-space-schema/markwen.space/schema/services";
 
 import "proto/services/pages/home_page.proto";
 import "proto/services/pages/resume_page.proto";
