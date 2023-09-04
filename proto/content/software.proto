@@ -4,15 +4,15 @@ option go_package = "markwen.space/content";
 
 import "google/protobuf/timestamp.proto";
 import "proto/components/image.proto";
-import "proto/components/range.proto";
 import "proto/components/link.proto";
+import "proto/primitives/range.proto";
 
 message Software {
   string id = 1;
-  string name = 2;
+  string title = 2;
   string description = 3;
   components.Image image = 4;
-  components.DateTimeRange time_range = 5;
+  primitives.DateTimeRange time_range = 5;
   repeated components.Image icons = 6;
   repeated string platforms = 7;
   repeated string frameworks = 8;

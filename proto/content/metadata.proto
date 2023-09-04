@@ -1,0 +1,11 @@
+syntax = "proto3";
+package content;
+option go_package = "markwen.space/content";
+
+import "proto/components/image.proto";
+
+message ContentMetadata {
+  string id = 1;
+  string value = 2;
+  components.Image image = 3; // can be icon or google map image of the latlong
+}

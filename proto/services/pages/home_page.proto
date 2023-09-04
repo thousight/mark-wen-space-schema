@@ -1,0 +1,15 @@
+syntax = "proto3";
+package services;
+option go_package = "markwen.space/services";
+
+import "proto/components/intro_card.proto";
+import "proto/components/page.proto";
+
+message HomePageRequest {
+  string name = 1;
+}
+
+message HomePageResponse {
+  components.PageMetadata metadata = 1;
+  components.IntroCard intro_card = 2;
+}

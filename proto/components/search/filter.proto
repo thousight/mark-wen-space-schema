@@ -2,7 +2,19 @@ syntax = "proto3";
 package search;
 option go_package = "markwen.space/components/search";
 
-import "proto/components/range.proto";
+import "proto/primitives/range.proto";
+
+message FilterRequest {
+  string id = 1;
+  repeated FilterRequestValue values = 2;
+}
+
+message FilterRequestValue {
+  oneof values {
+    string value = 1;
+    primitives.DateTimeRange dateTimeRange = 2;
+  }
+}
 
 message Filter {
   string id = 1;
@@ -12,7 +24,7 @@ message Filter {
   oneof types {
     Selection selection = 4;
     Keywords keywords = 5;
-    DateRange date_rage = 6;
+    primitives.DateTimeRange available_date_rage = 6;
   }
 }
 
@@ -30,9 +42,4 @@ message SelectionOption {
 message Keywords {
   repeated string keywords = 1;
   string placeholder = 2;
-}
-
-message DateRange {
-  components.DateTimeRange available = 1;
-  components.DateTimeRange selected = 2;
 }

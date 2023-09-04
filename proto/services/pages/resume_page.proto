@@ -1,0 +1,19 @@
+syntax = "proto3";
+package services;
+option go_package = "markwen.space/services";
+
+import "proto/components/intro_card.proto";
+import "proto/components/page.proto";
+import "proto/components/resume.proto";
+
+message ResumePageRequest {
+  string name = 1;
+}
+
+message ResumePageResponse {
+  components.PageMetadata metadata = 1;
+  components.IntroCard intro_card = 2;
+  components.ResumeSection skills = 3;
+  components.ResumeSection experiences = 4;
+  components.ResumeSection education = 5;
+}

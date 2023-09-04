@@ -1,0 +1,17 @@
+syntax = "proto3";
+package services;
+option go_package = "markwen.space/services";
+
+import "proto/components/page.proto";
+import "proto/components/search/search.proto";
+import "proto/content/software.proto";
+
+message SoftwarePageRequest {
+  search.SearchFunctionsRequest search_functions_request = 1;
+}
+
+message SoftwarePageResponse {
+  components.PageMetadata metadata = 1;
+  search.SearchFunctionsResponse search_functions_response = 2;
+  repeated content.Software softwares = 3;
+}

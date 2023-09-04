@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "gRPC schema for Mark Wen Space",
   "scripts": {
-    "gen:go": "mkdir pb && protoc proto/*/*.proto --go_out=./pb",
-    "gen:ts": "mkdir build && protoc --plugin='protoc-gen-ts=./node_modules/.bin/protoc-gen-ts' proto/*/*.proto --ts_out=./build",
+    "gen:go": "rm -rf pb && mkdir pb && protoc --go_out=./pb --go-grpc_out=./pb ./proto/*/*.proto ./proto/*/*/*.proto",
+    "gen:ts": "rm -rf build && mkdir build && protoc --plugin='protoc-gen-ts=./node_modules/.bin/protoc-gen-ts' --ts_out=./build proto/*/*.proto proto/*/*/*.proto ",
     "nuke": "rm -rf pb build node_modules"
   },
   "repository": {

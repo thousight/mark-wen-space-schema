@@ -1,0 +1,13 @@
+syntax = "proto3";
+package services;
+option go_package = "markwen.space/services";
+
+import "proto/services/pages/home_page.proto";
+import "proto/services/pages/resume_page.proto";
+import "proto/services/pages/software_page.proto";
+
+service Page {
+  rpc HomePage (HomePageRequest) returns (HomePageResponse);
+  rpc ResumePage (ResumePageRequest) returns (ResumePageResponse);
+  rpc SoftwarePage (SoftwarePageRequest) returns (SoftwarePageResponse);
+}

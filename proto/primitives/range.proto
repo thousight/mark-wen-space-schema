@@ -1,6 +1,6 @@
 syntax = "proto3";
-package components;
-option go_package = "markwen.space/components";
+package primitives;
+option go_package = "markwen.space/primitives";
 
 import "google/protobuf/timestamp.proto";
 
