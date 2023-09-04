@@ -1,6 +1,6 @@
 syntax = "proto3";
 package components;
-option go_package = "markwen.space/components";
+option go_package = "markwen.space.schema/components";
 
 message PageMetadata {
   string page_name = 1;

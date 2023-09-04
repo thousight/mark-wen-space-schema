@@ -1,6 +1,6 @@
 syntax = "proto3";
 package services;
-option go_package = "markwen.space/services";
+option go_package = "markwen.space.schema/services";
 
 import "proto/components/page.proto";
 import "proto/components/search/search.proto";

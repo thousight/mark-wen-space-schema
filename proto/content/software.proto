@@ -1,6 +1,6 @@
 syntax = "proto3";
 package content;
-option go_package = "markwen.space/content";
+option go_package = "markwen.space.schema/content";
 
 import "google/protobuf/timestamp.proto";
 import "proto/components/image.proto";
