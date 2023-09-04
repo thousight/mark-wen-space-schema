@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/thousight/mark-wen-space-schema/compare/v1.0.0...v1.0.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* **dep:** fix semantic-release dependency ([6053535](https://github.com/thousight/mark-wen-space-schema/commit/60535357b1da1eaa6ece6403153c1784f4befda9))
+
 # 1.0.0 (2023-09-04)
 
 
