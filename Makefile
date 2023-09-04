@@ -1,8 +1,9 @@
 clean:
-	rm -rf markwen.space build node_modules
+	rm -rf pb build node_modules
 
 go: clean
-	protoc -I. --go_out=. --go-grpc_out=. ./proto/*/*.proto ./proto/*/*/*.proto
+	mkdir pb
+	protoc -I. --go_out=./pb --go_opt=paths=source_relative --go-grpc_out=./pb --go-grpc_opt=paths=source_relative ./proto/*/*.proto ./proto/*/*/*.proto
 
 ts: clean 
 	yarn

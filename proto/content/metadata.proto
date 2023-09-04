@@ -1,6 +1,6 @@
 syntax = "proto3";
 package content;
-option go_package = "github.com/thousight/mark-wen-space-schema/markwen.space/schema/content";
+option go_package = "github.com/thousight/mark-wen-space-schema/markwen.space/pb/proto/content";
 
 import "proto/components/image.proto";
 
